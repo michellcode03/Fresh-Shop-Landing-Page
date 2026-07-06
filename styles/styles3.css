@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --color-purple: #b8a4d9;
+    --color-orange: #ffb299;
+    --color-green: #c8e6c9;
+    --color-pink: #ffb3c1;
+    --color-primary: #7daf02;
+    --color-dark: #1a1a1a;
+    --color-gray: #666666;
+}
+
+.products-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f8f8f6 0%, #e9eae4 100%);
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+/* Cards de Frutas */
+.product-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-bottom: 80px;
+}
+
+.product-card {
+    background: white;
+    border-radius: 20px;
+    padding: 25px 20px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.product-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.15;
+    z-index: 0;
+}
+
+.card-purple::before { background: var(--color-purple); }
+.card-orange::before { background: var(--color-orange); }
+.card-green::before { background: var(--color-green); }
+.card-pink::before { background: var(--color-pink); }
+
+.product-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.card-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 1;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-purple .card-title { color: #7b5fa3; }
+.card-orange .card-title { color: #e67e3d; }
+.card-green .card-title { color: #5a9e5f; }
+.card-pink .card-title { color: #e67890; }
+
+.card-image {
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+    position: relative;
+    z-index: 1;
+    filter: drop-shadow(0 8px 15px rgba(0, 0, 0, 0.15));
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover .card-image {
+    transform: scale(1.1);
+}
+
+/* Sección Central */
+.center-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+/* Features */
+.features-left,
+.features-right {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.feature-item {
+    text-align: center;
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.feature-item h4 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--color-dark);
+    margin-bottom: 8px;
+}
+
+.feature-item p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    color: var(--color-gray);
+    line-height: 1.6;
+}
+
+/* Centro Principal */
+.center-main {
+    text-align: center;
+}
+
+.main-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.main-subtitle {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    color: var(--color-gray);
+    margin-bottom: 40px;
+}
+
+.main-image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.organic-badge {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--color-primary);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    z-index: 10;
+    box-shadow: 0 8px 20px rgba(125, 175, 2, 0.3);
+}
+
+.badge-text {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.main-image {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15));
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .product-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .center-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .features-right {
+        order: 3;
+    }
+
+    .main-title {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .product-cards {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .main-title {
+        font-size: 2rem;
+    }
+
+    .feature-item {
+        padding: 20px;
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    }
+}

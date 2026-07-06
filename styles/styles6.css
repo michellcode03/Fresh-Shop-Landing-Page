@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --color-primary: #7daf02;
+    --color-primary-dark: #386100;
+    --color-dark: #1a1a1a;
+    --color-gray: #666666;
+    --color-white: #ffffff;
+    --color-bg-cream: #f5f3ed;
+    --color-bg-light-blue: #e8f4f8;
+}
+
+.products-gallery {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #f8f8f6 0%, #ffffff 100%);
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+/* Grid de Galería */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+/* Card Base */
+.gallery-card {
+    background: var(--color-white);
+    border-radius: 25px;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.15);
+}
+
+/* Card Grande (Izquierda) */
+.card-large {
+    grid-row: span 2;
+    background: var(--color-bg-cream);
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 50px 40px;
+}
+
+/* Card Pequeña Superior */
+.card-small.card-top {
+    background: var(--color-bg-cream);
+}
+
+/* Card Pequeña Inferior */
+.card-small.card-bottom {
+    background: var(--color-bg-light-blue);
+}
+
+/* Contenido de la Card */
+.card-content {
+    z-index: 2;
+    position: relative;
+}
+
+/* Título Grande */
+.card-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--color-dark);
+    line-height: 1.3;
+    margin-bottom: 20px;
+}
+
+/* Descripción */
+.card-description {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    color: var(--color-gray);
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.card-description .highlight {
+    color: var(--color-primary);
+    font-weight: 700;
+}
+
+/* Botón Principal */
+.btn-shop {
+    background: var(--color-primary);
+    color: var(--color-white);
+    padding: 14px 35px;
+    border: none;
+    border-radius: 50px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(125, 175, 2, 0.3);
+}
+
+.btn-shop:hover {
+    background: var(--color-primary-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(125, 175, 2, 0.4);
+}
+
+/* Imagen Grande */
+.card-image {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    width: 280px;
+    height: auto;
+}
+
+.card-image img {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.2));
+    transition: transform 0.3s ease;
+}
+
+.card-large:hover .card-image img {
+    transform: scale(1.08);
+}
+
+/* Título Pequeño */
+.card-title-small {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--color-dark);
+    line-height: 1.4;
+    margin-bottom: 15px;
+}
+
+/* Precio */
+.card-price {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    color: var(--color-gray);
+    font-weight: 500;
+}
+
+.price-highlight {
+    color: var(--color-primary);
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+/* Botón Pequeño */
+.btn-shop-small {
+    background: var(--color-primary);
+    color: var(--color-white);
+    padding: 10px 25px;
+    border: none;
+    border-radius: 50px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn-shop-small:hover {
+    background: var(--color-primary-dark);
+    transform: translateY(-2px);
+}
+
+/* Imagen Pequeña */
+.card-image-small {
+    width: 140px;
+    height: auto;
+    flex-shrink: 0;
+}
+
+.card-image-small img {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.15));
+    transition: transform 0.3s ease;
+}
+
+.gallery-card:hover .card-image-small img {
+    transform: scale(1.1);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card-large {
+        grid-row: auto;
+        min-height: 400px;
+    }
+
+    .card-image {
+        width: 240px;
+    }
+}
+
+@media (max-width: 768px) {
+    .products-gallery {
+        padding: 80px 0;
+    }
+
+    .gallery-grid {
+        gap: 20px;
+    }
+
+    .gallery-card {
+        padding: 30px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .card-title {
+        font-size: 1.8rem;
+    }
+
+    .card-title-small {
+        font-size: 1.1rem;
+    }
+
+    .card-image {
+        position: relative;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        max-width: 200px;
+        margin-top: 20px;
+    }
+
+    .card-image-small {
+        width: 120px;
+        margin-top: 15px;
+    }
+}
