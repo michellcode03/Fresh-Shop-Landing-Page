@@ -8,7 +8,7 @@ En este proyecto me enfoqué en crear una interfaz moderna, visualmente atractiv
 
 ##  Demo
 
-🔗 **GitHub Pages:** *(Agregar enlace aquí)*
+🔗 **GitHub Pages:** https://michellcode03.github.io/Fresh-Shop-Landing-Page/
 
 ##  Características
 
